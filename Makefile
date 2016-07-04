@@ -13,8 +13,7 @@ CHIBIOS_CONTRIB = ./chibios-contrib
 # project specific files
 SRC =	matrix.c \
 	keymap_common.c \
-	led.c \
-	led_controller.c
+        led.c
 
 ifdef KEYMAP
     SRC := keymap_$(KEYMAP).c $(SRC)
