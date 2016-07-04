@@ -1,5 +1,5 @@
 /*
-Copyright 2015 Jun Wako <wakojun@gmail.com>
+Copyright 2012 Jun Wako <wakojun@gmail.com>
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -31,21 +31,26 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define USBSTR_PRODUCT         'W', '\x00', 'h', '\x00', 'i', '\x00', 't', '\x00', 'e', '\x00', 'F', '\x00', 'o', '\x00', 'x', '\x00', ' ', '\x00'
 
 /* key matrix size */
-#define MATRIX_ROWS 9
-#define MATRIX_COLS 8
+#define MATRIX_ROWS 6
+#define MATRIX_COLS 21
+
+/* define if matrix has ghost */
+//#define MATRIX_HAS_GHOST
 
 /* Set 0 if debouncing isn't needed */
 #define DEBOUNCE    5
 
 /* Mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap */
-//#define LOCKING_SUPPORT_ENABLE
+#define LOCKING_SUPPORT_ENABLE
 /* Locking resynchronize hack */
-//#define LOCKING_RESYNC_ENABLE
+#define LOCKING_RESYNC_ENABLE
 
 /* key combination for command */
 #define IS_COMMAND() ( \
     keyboard_report->mods == (MOD_BIT(KC_LSHIFT) | MOD_BIT(KC_RSHIFT)) \
 )
+
+
 
 /*
  * Feature disable options
