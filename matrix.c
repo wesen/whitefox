@@ -28,6 +28,15 @@ static uint16_t debouncing_time = 0;
 void matrix_init(void)
 {
     debug_matrix = true;
+
+    // misuse this to configure the LEDs
+    // CAPS: PE0
+    // ROLL: PB18
+    // NUM: PA4
+    palSetPadMode(GPIOE, 0, PAL_MODE_OUTPUT_PUSHPULL);
+    palSetPadMode(GPIOB, 18, PAL_MODE_OUTPUT_PUSHPULL);
+    palSetPadMode(GPIOA, 4, PAL_MODE_OUTPUT_PUSHPULL);
+
     /* Column(sense) */
     // jakob = 21 columns (pin 1 bis 21, 1 -> esc)
 
@@ -56,12 +65,12 @@ void matrix_init(void)
     /* Row(strobe) */
     // jakob = 6 rows (pins 24 bis 29 von unten nach oben)
 
-    palSetPadMode(GPIOA, 5, PAL_MODE_INPUT_PULLDOWN);
-    palSetPadMode(GPIOB, 19, PAL_MODE_INPUT_PULLDOWN);
-    palSetPadMode(GPIOE, 1, PAL_MODE_INPUT_PULLDOWN);
-    palSetPadMode(GPIOC, 9, PAL_MODE_INPUT_PULLDOWN);
-    palSetPadMode(GPIOC, 8, PAL_MODE_INPUT_PULLDOWN);
-    palSetPadMode(GPIOC, 10, PAL_MODE_INPUT_PULLDOWN);
+    palSetPadMode(GPIOA, 5, PAL_MODE_OUTPUT_PUSHPULL);
+    palSetPadMode(GPIOB, 19, PAL_MODE_OUTPUT_PUSHPULL);
+    palSetPadMode(GPIOE, 1, PAL_MODE_OUTPUT_PUSHPULL);
+    palSetPadMode(GPIOC, 9, PAL_MODE_OUTPUT_PUSHPULL);
+    palSetPadMode(GPIOC, 8, PAL_MODE_OUTPUT_PUSHPULL);
+    palSetPadMode(GPIOC, 10, PAL_MODE_OUTPUT_PUSHPULL);
 
     memset(matrix, 0, MATRIX_ROWS);
     memset(matrix_debouncing, 0, MATRIX_ROWS);
