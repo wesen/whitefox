@@ -42,7 +42,7 @@ MCU_SERIES = K20x
 #   - MK20DX256 for Teensy 3.1 and 3.2
 #   - MK20DX128BLDR4 for Infinity 60% with Kiibohd bootloader
 #   - MK20DX256BLDR8 for Infinity ErgoDox with Kiibohd bootloader
-MCU_LDSCRIPT = MK20DX256BLDR8
+MCU_LDSCRIPT = MK20DX256
 
 # Startup code to use
 #  - it should exist in <chibios>/os/common/ports/ARMCMx/compilers/GCC/mk/
@@ -98,5 +98,8 @@ NKRO_ENABLE = yes	    # USB Nkey Rollover
 include $(TMK_DIR)/tool/chibios/common.mk
 include $(TMK_DIR)/tool/chibios/chibios.mk
 
-program: $(BUILDDIR)/$(PROJECT).bin
-	dfu-util -D $(BUILDDIR)/$(PROJECT).bin
+TOOLSPATH=/Users/manuel/Downloads/Arduino.app/Contents/Java/hardware/tools
+
+program: $(BUILDDIR)/$(PROJECT).hex
+	@echo PROGRAM $(BUILDDIR)
+	teensy_post_compile -test -file=$(PROJECT) -path=$(abspath $(BUILDDIR)) -tools=$(TOOLSPATH) -board=TEENSY31 -reboot
