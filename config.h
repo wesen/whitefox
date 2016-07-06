@@ -28,7 +28,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MANUFACTURER "TMK"
 #define USBSTR_MANUFACTURER    'T', '\x00', 'M', '\x00', 'K', '\x00', ' ', '\x00'
 #define PRODUCT "Infinity keyboard/TMK"
-#define USBSTR_PRODUCT         'W', '\x00', 'h', '\x00', 'i', '\x00', 't', '\x00', 'e', '\x00', 'F', '\x00', 'o', '\x00', 'x', '\x00', ' ', '\x00'
+#define USBSTR_PRODUCT         'C', '\x00', 'h', '\x00', 'a', '\x00', 'o', '\x00', 's', '\x00', \
+    'g', '\x00', 'h', '\x00', 'o', '\x00', 'u', '\x00', 'l', '\x00', ' ', '\x00'
 
 /* key matrix size */
 #define MATRIX_ROWS 6
