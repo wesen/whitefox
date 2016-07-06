@@ -36,7 +36,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  * In particular, I2C functions (interrupt-driven) should NOT be called from here.
  */
 void led_set(uint8_t usb_led) {
-//    SET_LED(GPIOE, 0, CAPS_LOCK);
-//    SET_LED(GPIOB, 18, SCROLL_LOCK);
-//    SET_LED(GPIOA, 4, NUM_LOCK);
+    SET_LED(GPIOE, 0, CAPS_LOCK);
+    SET_LED(GPIOB, 18, SCROLL_LOCK);
+    SET_LED(GPIOA, 4, NUM_LOCK);
 }

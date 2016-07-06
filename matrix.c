@@ -148,18 +148,6 @@ uint8_t matrix_scan(void)
         SET_BIT(data, 19, GET_BIT(gpio_d, 5));
         SET_BIT(data, 20, GET_BIT(gpio_d, 6));
 
-//        if (GET_BIT(gpio_b, 17)) {
-//            data = 1;
-//        } else {
-//            data = 0;
-//        }
-
-        if (data) {
-            SET_LED_NUM();
-        } else {
-            CLEAR_LED_NUM();
-        }
-
         // un-strobe row
         switch (row) {
         case 0: palSetPad(GPIOA, 5); break;
